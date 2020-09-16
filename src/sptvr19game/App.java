@@ -16,16 +16,30 @@ class App {
      public void run() {
         System.out.println("угадай задуманное число.");
         System.out.println("------------------");
+        int min = 0;
+        int max = 20;
         Random random = new Random();
-        int myNumber = random.nextInt(5-0+1)+0;
-        System.out.println("задуманно число от 0 до 5. угадай.");
+        int myNumber = random.nextInt(max-min+1)+min;
+        System.out.println("задуманно число от "+min+" до "+max+". угадай.");
         Scanner scanner = new Scanner (System.in);
-        int gamerNumber = scanner.nextInt();
-        if (myNumber == gamerNumber) {
-            System.out.println("ты выиграл!");  
-        }else{
-            System.out.println("ты проигралю Задумано число: "+myNumber);    
-                }
+        int attempt = 1;
+        do{ 
+            
+            
+            int gamerNumber = scanner.nextInt();
+            if (myNumber == gamerNumber) {
+               System.out.println("ты выиграл!");  
+               break;
+            }else{
+                if(attempt < 3){
+                    System.out.println("не угадал! попробуй еще"); 
+                }else{    
+                    System.out.println("ты проигралю Задумано число: "+myNumber);
+                    break;
+                }    
+            }
+            attempt++;
+        }while(true);
    
     }
    
