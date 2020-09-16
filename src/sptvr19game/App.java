@@ -33,6 +33,11 @@ class App {
             }else{
                 if(attempt < 3){
                     System.out.println("не угадал! попробуй еще"); 
+                    if(myNumber > gamerNumber) {
+                        System.out.println("Задуманное число больше");
+                      }else{
+                        System.out.println("Задуманное число меньше");
+                    }
                 }else{    
                     System.out.println("ты проигралю Задумано число: "+myNumber);
                     break;
